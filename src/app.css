@@ -9,7 +9,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #172554;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -45,6 +45,7 @@ body {
   margin: 0 auto;
   padding: 0;
   height: 100%;
+  background-color: #1e40af;
 }
 
 .header {
@@ -52,8 +53,8 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  border-bottom: 1px solid #ccc;
-  background-color: #f8f9fa;
+  /* border-bottom: 1px solid #ccc; */
+  /* background-color: red; */
   width: 100%;
 }
 
@@ -65,47 +66,23 @@ body {
 .nav a {
   margin: 0 10px;
   text-decoration: none;
-  color: #333;
+  color: #ded4d4;
 }
 
 .main-content {
   flex: 1;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: start;
   align-items: start;
-  /* padding: 20px; */
+  padding: 0px;
   width: 100%;
+  margin: 0;
 }
 
-.hero {
-  position: relative;
-  overflow: hidden;
-  background-color: rgba(110, 142, 251, 0.6); /* 添加一个半透明的背景色 */
-}
 
-.hero::before {
-  content: '';
-  position: absolute;
-  top: -5%;
-  left: -5%;
-  right: -5%;
-  bottom: -5%;
-  background-image: url('blank.jpg');
-  background-size: cover;
-  background-position: center;
-  opacity: 0.7; /* 调整透明度 */
-  transform: scale(1.1) rotate(2deg); /* 略微放大和旋转 */
-  z-index: -1;
-  filter: blur(3px); /* 添加轻微模糊效果 */
-}
 
-.hero-content {
-  position: relative;
-  z-index: 1;
-  padding: 4rem 2rem;
-  color: white;
-  text-align: center;
-}
+
 
 h1 {
   font-size: 2.5rem;
@@ -133,7 +110,7 @@ p {
   text-align: center;
   padding: 20px;
   border-top: 1px solid #ccc;
-  background-color: #f8f9fa;
+  background-color: #1e40af;;
   width: 100%;
   /* 确保 footer 在页面底部 */
   flex-shrink: 0;
@@ -142,18 +119,18 @@ p {
 /* 浅色模式 */
 body {
   background-color: #ffffff;
-  color: #000000;
+  color: #c4bcbc;
 }
 
 /* 深色模式 */
 @media (prefers-color-scheme: dark) {
   body {
-    background-color: #121212;
+    background-color: #1e40af;
     color: #ffffff;
   }
 
   .header, .footer {
-    background-color: #333;
+    background-color: #1e40af;
     border-color: #444;
   }
 
