@@ -16,7 +16,7 @@
         <p>Cells is a tools chain or working environment to help you reporting faster and easier.</p>
         <button  on:click={()=>alert("not ready")} class="cta-button w-40">Start</button>
         <div class="flex w-full justify-between items-center">
-          <img src="blank.jpg" alt="Cells" class="w-96 skew-x-3 -rotate-3 rounded-xl" />
+          <img src="setting.jpg" alt="Cells" class="w-96 skew-x-3 -rotate-3 rounded-xl" />
           <img src="report.jpg" alt="Cells" class="w-96 skew-y-3 rotate-3 rounded-xl" />
         </div>
       </div>
