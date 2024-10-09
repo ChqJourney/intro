@@ -28,56 +28,144 @@ a:hover {
 
 body {
   margin: 0;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
   display: flex;
-  place-items: center;
-  min-width: 320px;
+  flex-direction: column;
   min-height: 100vh;
 }
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+#app{
+  height: 100vh;
 }
-
-.card {
-  padding: 2em;
-}
-
-#app {
-  max-width: 1280px;
+.app-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0;
+  height: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ccc;
+  background-color: #f8f9fa;
+  width: 100%;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  /* padding: 20px; */
+  width: 100%;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(110, 142, 251, 0.6); /* 添加一个半透明的背景色 */
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -5%;
+  left: -5%;
+  right: -5%;
+  bottom: -5%;
+  background-image: url('blank.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.7; /* 调整透明度 */
+  transform: scale(1.1) rotate(2deg); /* 略微放大和旋转 */
+  z-index: -1;
+  filter: blur(3px); /* 添加轻微模糊效果 */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 4rem 2rem;
+  color: white;
   text-align: center;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* 添加文字阴影以增加可读性 */
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.cta-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid #ccc;
+  background-color: #f8f9fa;
+  width: 100%;
+  /* 确保 footer 在页面底部 */
+  flex-shrink: 0;
+}
+
+/* 浅色模式 */
+body {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* 深色模式 */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #ffffff;
   }
-  a:hover {
-    color: #747bff;
+
+  .header, .footer {
+    background-color: #333;
+    border-color: #444;
   }
-  button {
-    background-color: #f9f9f9;
+
+  .nav a {
+    color: #ffffff;
+  }
+
+  .hero {
+    /* background-color: #444; */
+  }
+
+  .cta-button {
+    background-color: #0056b3;
   }
 }

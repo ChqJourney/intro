@@ -1,47 +1,55 @@
-<script>import "./app.css";
-import svelteLogo from './assets/svelte.svg'
-import viteLogo from '/vite.svg'
-import Counter from './lib/Counter.svelte'</script>
+<script>
+  // 不再需要手动切换模式的逻辑
+</script>
 
-<main>
-  <div>
-    <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-      <img src="{viteLogo}" class="logo" alt="Vite Logo" />
-    </a>
-    <a href="https://svelte.dev" target="_blank" rel="noreferrer">
-      <img src="{svelteLogo}" class="logo svelte" alt="Svelte Logo" />
-    </a>
-  </div>
-  <h1>Vite + Svelte</h1>
-
-  <div class="card">
-    <Counter></Counter>
-  </div>
-
-  <p>
-    Check out <a href="https://github.com/sveltejs/kit#readme" target="_blank" rel="noreferrer">SvelteKit</a>, the official Svelte app framework powered by Vite!
-  </p>
-
-  <p class="read-the-docs">
-    Click on the Vite and Svelte logos to learn more
-  </p>
-</main>
-
+<div class="app-container">
+  <header class="header">
+    <div class="logo">Cells</div>
+    <nav class="nav">
+      <a href="#">Help</a>
+    </nav>
+  </header>
+  <main class="main-content">
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Not just a tool app, it is a new way to handle your report.</h1>
+        <p>Cells is a tool chain or platform to help you reporting faster and easier.</p>
+        <button class="cta-button">Start</button>
+      </div>
+    </section>
+    <!-- 其他内容 -->
+  </main>
+  <footer class="footer">
+    <p>© 2024 Cells. All rights reserved.</p>
+  </footer>
+</div>
 
 <style>
-  .logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-    transition: filter 300ms;
+  /* 样式将在 app.css 中详细定义 */
+  .hero {
+    position: relative;
+    overflow: hidden;
   }
-  .logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('blank.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+    transform: scale(1.1) rotate(2deg);
+    z-index: -1;
   }
-  .logo.svelte:hover {
-    filter: drop-shadow(0 0 2em #ff3e00aa);
-  }
-  .read-the-docs {
-    color: #888;
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    /* 添加适当的内边距和其他样式 */
+    padding: 2rem;
   }
 </style>
